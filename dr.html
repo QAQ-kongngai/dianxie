@@ -50,6 +50,11 @@
             max-width: 400px;
             margin: 50px auto;
         }
+
+        .back-home {
+            float: right;
+            margin-top: -50px;
+        }
     </style>
 </head>
 <body>
@@ -58,6 +63,8 @@
     <header class="section has-text-centered">
         <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 50px; vertical-align: middle;">
         <h1 class="title" style="display: inline;">欢迎来到登录页面</h1>
+        <!-- 增加“回主页”按钮 -->
+        <a href="dx1.html" class="button is-link is-small back-home">回主页</a>
     </header>
 
     <!-- 登录和注册表单部分 -->
@@ -174,6 +181,8 @@
 
             if (username === storedUsername && password === storedPassword) {
                 alert('登录成功！');
+                // 跳转到主页
+                window.location.href = 'dx1.html';
             } else {
                 alert('用户名或密码错误！');
             }
