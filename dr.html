@@ -176,11 +176,12 @@
             const password = document.getElementById('loginPassword').value;
 
             // 从 localStorage 中获取保存的用户信息
-            const storedUsername = localStorage.getItem('username');
-            const storedPassword = localStorage.getItem('password');
+            const users = JSON.parse(localStorage.getItem('users')) || {};
 
-            if (username === storedUsername && password === storedPassword) {
+            if (users[username] && users[username].password === password) {
                 alert('登录成功！');
+                // 保存登录状态到 localStorage
+                localStorage.setItem('loggedInUser', username);
                 // 跳转到主页
                 window.location.href = 'dx1.html';
             } else {
@@ -195,15 +196,24 @@
             const password = document.getElementById('registerPassword').value;
             const confirmPassword = document.getElementById('confirmPassword').value;
 
+            // 获取已有用户数据
+            let users = JSON.parse(localStorage.getItem('users')) || {};
+
+            if (users[username]) {
+                alert('用户名已存在！');
+                return;
+            }
+
             if (password !== confirmPassword) {
                 alert('两次输入的密码不一致！');
                 return;
             }
 
             if (username && email && password) {
-                // 使用 localStorage 保存用户信息
-                localStorage.setItem('username', username);
-                localStorage.setItem('password', password);
+                // 保存新用户信息到 localStorage
+                users[username] = { email, password };
+                localStorage.setItem('users', JSON.stringify(users));
+
                 alert('注册成功！');
                 showLogin(); // 跳转回登录表单
             } else {
