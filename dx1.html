@@ -135,7 +135,7 @@
 
             // 检查用户是否登录
             const headerLogin = document.getElementById('header-login');
-            const username = localStorage.getItem('username');
+            const username = localStorage.getItem('loggedInUser');  // 检查是否有已登录的用户
 
             if (username) {
                 // 如果用户已登录，显示"欢迎 + 用户名"和退出按钮
@@ -150,9 +150,8 @@
 
         // 退出登录逻辑
         function logout() {
-            // 清除 localStorage 中的登录信息
-            localStorage.removeItem('username');
-            localStorage.removeItem('password');
+            // 清除 localStorage 中的登录状态
+            localStorage.removeItem('loggedInUser');
             // 刷新页面以显示未登录状态
             location.reload();
         }
