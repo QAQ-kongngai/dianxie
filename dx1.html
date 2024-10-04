@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烟台大学电子信息协会</title>
+    <!-- 引入 Bulma CSS 框架 -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <style>
+        /* 自定义样式 */
+        header, footer {
+            background-color: #87CEEB; /* 天蓝色 */
+        }
+        .navbar-item {
+            background-color: rgb(102, 102, 102); /* 导引项黑色 */
+            color: white; /* 默认字体颜色白色 */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar-item:hover {
+            background-color: white; /* 触碰时背景变白 */
+            color: black; /* 触碰时字体变黑 */
+        }
+        .dropdown {
+            display: none; /* 默认隐藏下拉菜单 */
+            position: absolute; /* 绝对定位 */
+            background-color: black; /* 下拉菜单背景色 */
+            z-index: 1000; /* 确保下拉菜单在其他元素之上 */
+        }
+        .navbar-item.has-dropdown:hover .dropdown {
+            display: block; /* 悬停时显示下拉菜单 */
+        }
+        .navbar-item.has-dropdown:hover .dropdown .navbar-item {
+            color: white; /* 下拉菜单项字体颜色 */
+        }
+        .navbar-item.has-dropdown:hover .dropdown .navbar-item:hover {
+            background-color: white; /* 下拉菜单项悬停时背景色 */
+            color: black; /* 悬停时字体颜色 */
+        }
+        /* 登录表单样式 */
+        .login-form {
+            display: none; /* 默认隐藏登录表单 */
+            position: absolute;
+            top: 70px; /* 调整位置 */
+            right: 20px; /* 调整位置 */
+            background-color: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 页眉部分 -->
+        <header class="section has-text-centered">
+            <img src="C:\Users\KONGNGAI\Desktop\PCB\协会标.png" alt="协会标志" style="width: 50px; vertical-align: middle;">
+            <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会官网</h1>
+            <button id="loginButton" class="button is-light" style="float: right; margin-left: 20px;">登录</button>
+            <div class="login-form" id="loginForm">
+                <label for="username">用户名:</label>
+                <input type="text" id="username" placeholder="请输入用户名"><br>
+                <label for="password">密码:</label>
+                <input type="password" id="password" placeholder="请输入密码"><br>
+                <button id="submitLogin" class="button is-primary">提交</button>
+            </div>
+            <p class="subtitle">《一句标语。。。》</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav class="navbar is-light">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">电子信息协会</a>
+                <button class="navbar-burger burger" aria-label="菜单" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">首页</a>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">部门</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="#">软件部</a>
+                            <a class="navbar-item" href="#">硬件部</a>
+                            <a class="navbar-item" href="#">物理部</a>
+                            <a class="navbar-item" href="#">传媒部</a>
+
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">资源</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="#">专业课资源</a>
+                            <a class="navbar-item" href="#">各部门资源</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">联系</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="#">子选项 1</a>
+                            <a class="navbar-item" href="#">子选项 2</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <main class="section">
+            <h2 class="title is-2">协会简介</h2>
+            <p class="content">烟台大学电子信息协会是一个富于创新与实干精神的学生组织，旨在通过开展科技培
+                训、科技实践活动，培养烟大学子的科技素养并为其提供良好的科研学习环境。
+                烟台大学电子信息协会原为光电学院科技协会成立于2008年，下设“软件部、硬件
+                部、传媒部、物理部”四个部门。协会设备齐全、拥有丰富的知识资源，能为协会成员提供
+                多元化实践培训以及学习氛围浓厚的环境。烟台大学电子信息协会致力于科技创新、善于钻研，在为同学们提供技术支持的同时也为我院EDA实验室以及FPGA实验室提供大量人才如今电协已有20余名同学进入我院实验室，他们在电子设计大赛、挑战杯、ICAN等多个国家级比赛中取得优异成绩。协会旨在让每位成员都有所知、有所得、有所成长，丰富在校大学生的生活。
+                </p>
+            <button class="button is-primary">了解更多</button>
+        </main>
+
+        <!-- 页脚部分 -->
+        <footer class="footer has-text-centered">
+            <div class="content">
+                <p>&copy; 2024/9/27更新 版权所有.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 引入 Bulma JS（可选） -->
+    <script>
+        // 处理菜单展开/收起
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.getElementById('navbarMenu');
+            const loginButton = document.getElementById('loginButton');
+            const loginForm = document.getElementById('loginForm');
+            const submitLogin = document.getElementById('submitLogin');
+
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            // 登录按钮点击事件
+            loginButton.addEventListener('click', (event) => {
+                event.stopPropagation();  // 防止点击登录按钮关闭表单
+                loginForm.style.display = loginForm.style.display === 'block' ? 'none' : 'block'; // 切换登录表单显示
+            });
+
+            // 点击任意其他位置时隐藏登录表单
+            document.addEventListener('click', (event) => {
+                const isClickInsideForm = loginForm.contains(event.target);
+                const isClickLoginButton = loginButton.contains(event.target);
+                if (!isClickInsideForm && !isClickLoginButton) {
+                    loginForm.style.display = 'none'; // 点击其他地方隐藏表单
+                }
+            });
+
+            // 登录表单提交事件（这里设置用户名和密码）
+            submitLogin.addEventListener('click', () => {
+                const username = document.getElementById('username').value;
+                const password = document.getElementById('password').value;
+
+                // 简单的用户名和密码验证（示例）
+                if (username === 'admin' && password === '123456') {
+                    alert('登录成功！');
+                    loginForm.style.display = 'none'; // 隐藏登录表单
+                } else {
+                    alert('用户名或密码错误！');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
