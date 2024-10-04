@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录界面</title>
+    <!-- 引入 Bulma CSS 框架 -->
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 400px;
+            margin-top: 50px;
+        }
+        .tabs {
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="tabs is-toggle is-fullwidth">
+            <ul>
+                <li class="is-active" id="loginTab">
+                    <a href="#" onclick="showLogin()">
+                        <span>登录</span>
+                    </a>
+                </li>
+                <li id="registerTab">
+                    <a href="#" onclick="showRegister()">
+                        <span>注册</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 登录表单 -->
+        <div id="loginForm" class="form-container">
+            <h1 class="title is-4">登录</h1>
+            <div class="field">
+                <label class="label">用户名</label>
+                <div class="control">
+                    <input class="input" type="text" id="loginUsername" placeholder="请输入用户名">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">密码</label>
+                <div class="control">
+                    <input class="input" type="password" id="loginPassword" placeholder="请输入密码">
+                </div>
+            </div>
+
+            <div class="control">
+                <button class="button is-primary" onclick="login()">登录</button>
+            </div>
+        </div>
+
+        <!-- 注册表单 -->
+        <div id="registerForm" class="form-container" style="display: none;">
+            <h1 class="title is-4">注册</h1>
+            <div class="field">
+                <label class="label">用户名</label>
+                <div class="control">
+                    <input class="input" type="text" id="registerUsername" placeholder="请输入用户名">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">邮箱</label>
+                <div class="control">
+                    <input class="input" type="email" id="registerEmail" placeholder="请输入邮箱">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">密码</label>
+                <div class="control">
+                    <input class="input" type="password" id="registerPassword" placeholder="请输入密码">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">确认密码</label>
+                <div class="control">
+                    <input class="input" type="password" id="confirmPassword" placeholder="请确认密码">
+                </div>
+            </div>
+
+            <div class="control">
+                <button class="button is-primary" onclick="register()">注册</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入 JS -->
+    <script>
+        // 切换到登录表单
+        function showLogin() {
+            document.getElementById('loginForm').style.display = 'block';
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('loginTab').classList.add('is-active');
+            document.getElementById('registerTab').classList.remove('is-active');
+        }
+
+        // 切换到注册表单
+        function showRegister() {
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('registerForm').style.display = 'block';
+            document.getElementById('loginTab').classList.remove('is-active');
+            document.getElementById('registerTab').classList.add('is-active');
+        }
+
+        // 登录逻辑
+        function login() {
+            const username = document.getElementById('loginUsername').value;
+            const password = document.getElementById('loginPassword').value;
+
+            if (username === 'admin' && password === '123456') {
+                alert('登录成功！');
+            } else {
+                alert('用户名或密码错误！');
+            }
+        }
+
+        // 注册逻辑
+        function register() {
+            const username = document.getElementById('registerUsername').value;
+            const email = document.getElementById('registerEmail').value;
+            const password = document.getElementById('registerPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致！');
+                return;
+            }
+
+            if (username && email && password) {
+                alert('注册成功！');
+                showLogin();
+            } else {
+                alert('请填写完整信息！');
+            }
+        }
+    </script>
+
+</body>
+</html>
