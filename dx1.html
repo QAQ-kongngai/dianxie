@@ -52,8 +52,8 @@
         <header class="section has-text-centered">
             <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 50px; vertical-align: middle;">
             <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会官网</h1>
-            <!-- 增加登录按钮 -->
-            <a href="dr.html" class="button is-primary is-small login-button">登录</a>
+            <!-- 动态登录或欢迎信息部分 -->
+            <span id="header-login" class="button is-primary is-small login-button"></span>
         </header>
 
         <!-- 导航栏 -->
@@ -128,6 +128,20 @@
                 burger.classList.toggle('is-active');
                 menu.classList.toggle('is-active');
             });
+
+            // 检查用户是否登录
+            const headerLogin = document.getElementById('header-login');
+            const username = localStorage.getItem('username');
+
+            if (username) {
+                // 如果用户已登录，显示"欢迎 + 用户名"
+                headerLogin.textContent = `欢迎, ${username}`;
+                headerLogin.classList.remove('is-primary');
+                headerLogin.classList.add('is-link');
+            } else {
+                // 如果用户未登录，显示登录按钮
+                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
+            }
         });
     </script>
 </body>
