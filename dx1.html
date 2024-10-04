@@ -43,6 +43,10 @@
         .login-button {
             float: right;
         }
+        .logout-button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -117,7 +121,7 @@
         </footer>
     </div>
 
-    <!-- 引入 Bulma JS（可选） -->
+    <!-- 引入 JS -->
     <script>
         // 处理菜单展开/收起
         document.addEventListener('DOMContentLoaded', () => {
@@ -134,8 +138,8 @@
             const username = localStorage.getItem('username');
 
             if (username) {
-                // 如果用户已登录，显示"欢迎 + 用户名"
-                headerLogin.textContent = `欢迎, ${username}`;
+                // 如果用户已登录，显示"欢迎 + 用户名"和退出按钮
+                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
                 headerLogin.classList.remove('is-primary');
                 headerLogin.classList.add('is-link');
             } else {
@@ -143,6 +147,15 @@
                 headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
             }
         });
+
+        // 退出登录逻辑
+        function logout() {
+            // 清除 localStorage 中的登录信息
+            localStorage.removeItem('username');
+            localStorage.removeItem('password');
+            // 刷新页面以显示未登录状态
+            location.reload();
+        }
     </script>
 </body>
 </html>
