@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>烟台大学电子信息协会 - STI与HRP考核</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link rel="icon" href="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" type="image/png">
+
+    <style>
+        header, footer {
+            background-color: #87CEEB;
+        }
+        .navbar-item {
+            background-color: rgb(102, 102, 102);
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar-item:hover {
+            background-color: white;
+            color: black;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            background-color: black;
+            z-index: 1000;
+        }
+        .navbar-item.has-dropdown:hover .dropdown {
+            display: block;
+        }
+        .navbar-item.has-dropdown:hover .dropdown .navbar-item {
+            color: white;
+        }
+        .navbar-item.has-dropdown:hover .dropdown .navbar-item:hover {
+            background-color: white;
+            color: black;
+        }
+        .login-button {
+            float: right;
+        }
+        .logout-button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .subtitle-english {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.8em;
+        }
+        .vertical-nav {
+            width: 200px;
+            position: fixed;
+            top: 120px;
+            left: 10px;
+            border-right: 1px solid #ccc;
+        }
+        .vertical-nav a {
+            display: block;
+            padding: 10px;
+            color: #3273dc;
+            text-decoration: none;
+        }
+        .vertical-nav a:hover {
+            background-color: #f5f5f5;
+        }
+        .content-area {
+            margin-left: 220px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- 页眉部分 -->
+        <header class="section has-text-centered">
+            <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 80px; vertical-align: middle;">
+            <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会官网</h1>
+            <h2 class="subtitle-english">Welcome to Yantai University Electronics and Information Association</h2>
+            <span id="header-login" class="button is-primary is-small login-button"></span>
+        </header>
+
+        <!-- 导航栏 -->
+       <nav class="navbar is-light">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">电子信息协会</a>
+                <button class="navbar-burger burger" aria-label="菜单" aria-expanded="false" data-target="navbarMenu">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </button>
+            </div>
+            <div id="navbarMenu" class="navbar-menu">
+                <div class="navbar-end">
+                    <a class="navbar-item" href="dx1.html">首页</a>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">部门</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="硬件部.html">硬件部</a>
+                            <a class="navbar-item" href="软件部.html">软件部</a>
+                            <a class="navbar-item" href="物理部.html">物理部</a>
+                            <a class="navbar-item" href="传媒部.html">传媒部</a>
+                            <a class="navbar-item" href="传媒部.html">STI小组</a>
+                            <a class="navbar-item" href="传媒部.html">HRP小组</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">资源</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="#">专业课资源</a>
+                            <a class="navbar-item" href="#">各部门资源</a>
+                            <a class="navbar-item" href="#">活动资料</a>
+                            <a class="navbar-item" href="#">竞赛资源</a>
+                        </div>
+                    </div>
+                    <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" href="#">联系</a>
+                        <div class="dropdown">
+                            <a class="navbar-item" href="#">合作</a>
+                            <a class="navbar-item" href="#">反馈</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- 垂直导引 -->
+        <aside class="vertical-nav">
+            <a href="#sti-section">STI考核内容</a>
+            <a href="#hrp-section">HRP考核内容（待定）</a>
+        </aside>
+
+        <!-- 主要内容 -->
+        <main class="section content-area">
+            <section id="sti-section">
+                <h2 class="title is-2">STI考核内容</h2>
+                <p>STI小组代表电协的精英力量，成员需具备专业技能、团队协作及科研能力。</p>
+                <h3>软件方向</h3>
+                <p>主要考核内容为基础算法，包括双指针、排序算法等，考核时限为2小时。考试不限编程语言。</p>
+                
+                <h3>硬件方向</h3>
+                <p>考核内容涉及电路设计与实物焊接，需依据给定的芯片手册和器材，设计符合要求的电路，并进行实物焊接操作。</p>
+
+                <h3>物理方向</h3>
+                <p>考核内容包括物理建模、实验设计、数据处理及报告撰写，涉及物理学的理论、实验与计算等方向。</p>
+            </section>
+
+            <section id="hrp-section">
+                <h2 class="title is-2">HRP考核内容</h2>
+                <p>HRP考核内容暂时待定，将在后续通知中进行详细说明。</p>
+            </section>
+        </main>
+
+        <!-- 页脚部分 -->
+        <footer class="footer has-text-centered">
+            <div class="content">
+                <p>&copy; 2024/10/5更新 版权所有.</p>
+                <p>联系地址: 烟台大学化学馆北109/北112</p>
+                <p>官方QQ: 3300200063</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 引入 JS -->
+    <script>
+        // 处理菜单展开/收起
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.getElementById('navbarMenu');
+
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            const headerLogin = document.getElementById('header-login');
+            const username = localStorage.getItem('loggedInUser');
+
+            if (username) {
+                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
+                headerLogin.classList.remove('is-primary');
+                headerLogin.classList.add('is-link');
+            } else {
+                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            location.reload();
+        }
+    </script>
+</body>
+</html>
