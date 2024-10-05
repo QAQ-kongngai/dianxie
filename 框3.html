@@ -47,12 +47,12 @@
             font-family: 'Times New Roman', serif;
             font-size: 0.8em;
         }
+        /* 导引栏样式 */
         .vertical-nav {
             width: 200px;
-            position: fixed;
-            top: 120px;
-            left: 10px;
-            border-right: 1px solid #ccc;
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            margin-top: 10px;
         }
         .vertical-nav a {
             display: block;
@@ -61,10 +61,36 @@
             text-decoration: none;
         }
         .vertical-nav a:hover {
+            background-color: #3273dc;
+            color: white;
+        }
+        /* STI 右拉菜单 */
+        .sti-dropdown {
+            display: none;
+            background-color: #fff;
+            padding-left: 20px;
+        }
+        .sti-dropdown a {
+            display: block;
+            padding: 8px;
+            color: #3273dc;
+        }
+        .sti-dropdown a:hover {
             background-color: #f5f5f5;
         }
+        /* 鼠标悬停显示子菜单 */
+        .vertical-nav a.sti:hover .sti-dropdown {
+            display: block;
+        }
+        /* 主要内容样式 */
         .content-area {
             margin-left: 220px;
+        }
+        .content-area section {
+            display: none;
+        }
+        .content-area section.active {
+            display: block;
         }
     </style>
 </head>
@@ -125,27 +151,35 @@
 
         <!-- 垂直导引 -->
         <aside class="vertical-nav">
-            <a href="#sti-section">STI考核内容</a>
+            <a href="#" class="sti">STI考核方向
+                <div class="sti-dropdown">
+                    <a href="#" onclick="showContent('software')">软件方向</a>
+                    <a href="#" onclick="showContent('hardware')">硬件方向</a>
+                    <a href="#" onclick="showContent('physics')">物理方向</a>
+                </div>
+            </a>
             <a href="#hrp-section">HRP考核内容（待定）</a>
         </aside>
 
         <!-- 主要内容 -->
         <main class="section content-area">
-            <section id="sti-section">
-                <h2 class="title is-2">STI考核内容</h2>
-                <p>STI小组代表电协的精英力量，成员需具备专业技能、团队协作及科研能力。</p>
-                <h3>软件方向</h3>
-                <p>主要考核内容为基础算法，包括双指针、排序算法等，考核时限为2小时。考试不限编程语言。</p>
-                
-                <h3>硬件方向</h3>
-                <p>考核内容涉及电路设计与实物焊接，需依据给定的芯片手册和器材，设计符合要求的电路，并进行实物焊接操作。</p>
+            <section id="software" class="active">
+                <h2 class="title is-3">软件方向考核</h2>
+                <p>软件方向主要考核基础算法，包括双指针、排序算法等。考核时限为2小时，考试不限编程语言。</p>
+            </section>
 
-                <h3>物理方向</h3>
-                <p>考核内容包括物理建模、实验设计、数据处理及报告撰写，涉及物理学的理论、实验与计算等方向。</p>
+            <section id="hardware">
+                <h2 class="title is-3">硬件方向考核</h2>
+                <p>硬件方向的考核涉及电路设计与实物焊接，需依据给定的芯片手册和器材，设计符合要求的电路，并进行实物焊接操作。</p>
+            </section>
+
+            <section id="physics">
+                <h2 class="title is-3">物理方向考核</h2>
+                <p>物理方向考核内容包括物理建模、实验设计、数据处理及报告撰写，涉及物理学的理论、实验与计算。</p>
             </section>
 
             <section id="hrp-section">
-                <h2 class="title is-2">HRP考核内容</h2>
+                <h2 class="title is-3">HRP考核内容</h2>
                 <p>HRP考核内容暂时待定，将在后续通知中进行详细说明。</p>
             </section>
         </main>
@@ -187,6 +221,14 @@
         function logout() {
             localStorage.removeItem('loggedInUser');
             location.reload();
+        }
+
+        // 切换内容显示
+        function showContent(sectionId) {
+            document.querySelectorAll('.content-area section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
         }
     </script>
 </body>
