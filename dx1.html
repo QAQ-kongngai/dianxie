@@ -73,6 +73,24 @@
             justify-content: space-around;
             flex-wrap: wrap;
         }
+        /* 新增内容部分样式 */
+        .content-box {
+            background-color: #87CEEB;
+            padding: 20px;
+            margin-top: 20px;
+            position: relative;
+        }
+        .content-text {
+            width: 65%;
+            display: inline-block;
+            vertical-align: top;
+        }
+        .content-video {
+            width: 30%;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 5%;
+        }
     </style>
 </head>
 <body>
@@ -106,8 +124,8 @@
                             <a class="navbar-item" href="软件部.html">软件部</a>
                             <a class="navbar-item" href="物理部.html">物理部</a>
                             <a class="navbar-item" href="传媒部.html">传媒部</a>
-                            <a class="navbar-item" href="传媒部.html">STI小组</a>
-                            <a class="navbar-item" href="传媒部.html">HRP小组</a>
+                            <a class="navbar-item" href="框3.html#sti-overview">STI小组</a>
+                            <a class="navbar-item" href="框3.html#hrp">HRP小组</a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
@@ -133,12 +151,22 @@
         <!-- 主要内容 -->
         <main class="section">
             <h2 class="title is-2">协会简介</h2>
-            <p class="content">烟台大学电子信息协会是一个富于创新与实干精神的学生组织，旨在通过开展科技培
-训、科技实践活动，培养烟大学子的科技素养并为其提供良好的科研学习环境。
-烟台大学电子信息协会原为光电学院科技协会成立于2008年，下设“软件部、硬件
-部、传媒部、物理部”四个部门。协会设备齐全、拥有丰富的知识资源，能为协会成员提供
-多元化实践培训以及学习氛围浓厚的环境。烟台大学电子信息协会致力于科技创新、善于钻研，在为同学们提供技术支持的同时也为我院EDA实验室以及FPGA实验室提供大量人才.在电子设计大赛、挑战杯、ICAN等多个国家级比赛中取得优异成绩。协会旨在让每位成员都有所知、有所得、有所成长，丰富在校大学生的生活。
-。</p>
+            <p class="content">烟台大学电子信息协会是一个富于创新与实干精神的学生组织，旨在通过开展科技培训、科技实践活动，培养烟大学子的科技素养并为其提供良好的科研学习环境。烟台大学电子信息协会原为光电学院科技协会成立于2008年，下设“软件部、硬件部、传媒部、物理部”四个部门。协会设备齐全、拥有丰富的知识资源，能为协会成员提供多元化实践培训以及学习氛围浓厚的环境。烟台大学电子信息协会致力于科技创新、善于钻研，在为同学们提供技术支持的同时也为我院EDA实验室以及FPGA实验室提供大量人才。在电子设计大赛、挑战杯、ICAN等多个国家级比赛中取得优异成绩。协会旨在让每位成员都有所知、有所得、有所成长，丰富在校大学生的生活。</p>
+            
+            <!-- 内容展示区域 -->
+            <div class="content-box">
+                <div class="content-text">
+                    <h3 class="title is-4">STI与HRP考核介绍</h3>
+                    <p>STI小组与HRP小组是协会的科研与管理中坚力量。加入这些小组可以提升个人科研能力和管理经验，获得更多参与项目的机会。</p>
+                    <a href="电协留座条例2024版.docx" target="_blank">查看《电协留座条例2024版》</a>
+                </div>
+                <div class="content-video">
+                    <video width="480" height="270" controls>
+                        <source src="your-video.mp4" type="video/mp4">
+                        您的浏览器不支持视频播放。
+                    </video>
+                </div>
+            </div>
             
             <!-- 卡片部分 -->
             <div class="card-container">
