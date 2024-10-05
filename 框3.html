@@ -52,7 +52,7 @@
             width: 200px;
             margin-right: 20px;
             padding: 20px;
-            background-color: rgb(102, 102, 102);
+            background-color: rgb(51, 51, 51);
             border-radius: 8px;
             color: white;
         }
@@ -64,6 +64,8 @@
             padding: 10px;
             border-radius: 4px;
             margin-bottom: 10px;
+            width: 100%;
+            text-align: center;
         }
         .sidebar .navbar-item:hover {
             background-color: #87CEEB;
@@ -79,7 +81,7 @@
             list-style-type: none;
             padding-left: 0;
             margin-top: 0;
-            background-color: rgb(102, 102, 102);
+            background-color: rgb(51, 51, 51);
             border-radius: 4px;
             z-index: 1000;
             width: 200px;
@@ -94,8 +96,8 @@
         }
         .content-area {
             margin-left: 220px;
-            font-size: 1.1em;
-            line-height: 1.6;
+            font-size: 1.2em;
+            line-height: 1.8;
         }
         .content-area section {
             display: none;
@@ -106,6 +108,20 @@
         a {
             color: white;
             text-decoration: underline;
+        }
+        .content-area a {
+            color: #3273dc;
+            text-decoration: underline;
+        }
+        h2.title {
+            margin-bottom: 25px;
+            font-size: 2em;
+            color: #333;
+        }
+        p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            line-height: 1.8;
         }
     </style>
 </head>
@@ -181,31 +197,31 @@
         <!-- 主要内容 -->
         <main class="section content-area">
             <section id="sti-overview" class="active">
-                <h2 class="navbar-link">STI小组介绍</h2>
+                <h2 class="title">STI小组介绍</h2>
                 <p>STI的原含义是Science Technology Intelligence，是18级第一届STI学长学姐们创造出的含义，但是每个STI小组的成员心中可以自由理解。STI小组代表电协的精英力量，是电协在专业技能上的门面。STI小组应当有时刻增进自己，彼此扶持成长的意识；应当有克服难题，坚持不懈的能力；应当有共同进退，积极进取的精神。</p>
                 <p>STI小组拥有在电协109与112留座的权益，同时优先享有协会的各种培养资源以及更多的机会，同时STI小组的成员也需要在学习竞赛与科研知识上受到规管，需严格执行培训计划与留座制度。</p>
                 <a href="电协留座条例2024版.docx">电协留座条例2024版</a>
             </section>
             <section id="sti-software">
-                <h2 class="navbar-item">STI小组 - 软件方向</h2>
+                <h2 class="title">STI小组 - 软件方向</h2>
                 <p>对于物电院的要求是首先学完51单片机，学完51单片机后可以根据自己的学习情况再细分方向，愿意继续学单片机的可以学习STM32单片机，认为不适合学单片机的可以学习其他方向：比如深度学习首先学习Python，学习完Python基础，再学习机器学习的内容，熟练使用各种模型。学习单片机是一种很好的入门电子信息专业的方法，建议电子信息专业的STI都首选单片机。</p>
                 <p><strong>考核内容：</strong>基础算法题目，共四道题目，不限语言，时长两个小时，内容包括基础算法比如双指针、排序算法等。</p>
             </section>
             <section id="sti-hardware">
-                <h2 class="navbar-item">STI小组 - 硬件方向</h2>
+                <h2 class="title">STI小组 - 硬件方向</h2>
                 <p>硬件方向学习内容相对琐碎且复杂，涉及到非常庞大的知识量，基础理论知识难理解难消化，但循序渐进，终能有所成果。</p>
                 <p><strong>理论部分：</strong>电路分析、模拟电子技术基础、数字电子技术基础。</p>
                 <p><strong>实践部分：</strong>学会使用Multisim软件进行电路仿真，掌握仪器仪表的使用，熟练焊接技巧等。</p>
                 <p><strong>考核内容：</strong>主要考核实际动手能力与理论知识的结合，内容涉及电路分析与仿真实验。</p>
             </section>
             <section id="sti-physics">
-                <h2 class="navbar-item">STI小组 - 物理方向</h2>
+                <h2 class="title">STI小组 - 物理方向</h2>
                 <p>物理方向注重于提升基础物理素养以及培养对物理学科的深入理解与探索精神。</p>
                 <p><strong>学习内容：</strong>力学、电磁学、热学、光学以及量子物理的基础知识，进一步学习科研实验的设计与数据分析。</p>
                 <p><strong>考核内容：</strong>主要考核物理基本功及实验设计能力，内容包括基础物理实验及数据分析。</p>
             </section>
             <section id="hrp">
-                <h2 class="tnavbar-link">HRP小组</h2>
+                <h2 class="title">HRP小组</h2>
                 <p>HRP小组的内容待定，敬请期待。</p>
             </section>
         </main>
