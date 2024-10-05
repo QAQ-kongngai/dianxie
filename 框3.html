@@ -47,44 +47,32 @@
             font-family: 'Times New Roman', serif;
             font-size: 0.8em;
         }
-        /* 导引栏样式 */
-        .vertical-nav {
+        .sidebar {
+            float: left;
             width: 200px;
+            margin-right: 20px;
+            padding: 20px;
             background-color: #f5f5f5;
-            border: 1px solid #ccc;
-            margin-top: 10px;
+            border-radius: 8px;
         }
-        .vertical-nav a {
-            display: block;
-            padding: 10px;
-            color: #3273dc;
-            text-decoration: none;
-        }
-        .vertical-nav a:hover {
-            background-color: #3273dc;
-            color: white;
-        }
-        /* STI 右拉菜单 */
-        .sti-dropdown {
-            display: none;
-            background-color: #fff;
-            padding-left: 20px;
-        }
-        .sti-dropdown a {
-            display: block;
-            padding: 8px;
-            color: #3273dc;
-        }
-        .sti-dropdown a:hover {
-            background-color: #f5f5f5;
-        }
-        /* 鼠标悬停显示子菜单 */
-        .vertical-nav a.sti:hover .sti-dropdown {
-            display: block;
-        }
-        /* 主要内容样式 */
         .content-area {
             margin-left: 220px;
+        }
+        .dropdown-menu {
+            display: none;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 10px;
+        }
+        .dropdown-toggle:hover + .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            padding: 5px 0;
+            cursor: pointer;
+        }
+        .dropdown-menu li:hover {
+            background-color: #87CEEB;
         }
         .content-area section {
             display: none;
@@ -149,38 +137,47 @@
             </div>
         </nav>
 
-        <!-- 垂直导引 -->
-        <aside class="vertical-nav">
-            <a href="#" class="sti">STI考核方向
-                <div class="sti-dropdown">
-                    <a href="#" onclick="showContent('software')">软件方向</a>
-                    <a href="#" onclick="showContent('hardware')">硬件方向</a>
-                    <a href="#" onclick="showContent('physics')">物理方向</a>
-                </div>
-            </a>
-            <a href="#hrp-section">HRP考核内容（待定）</a>
-        </aside>
+        <!-- 垂直导引栏 -->
+        <div class="sidebar">
+            <ul>
+                <li><a href="#" onclick="showContent('sti-overview')">STI小组介绍</a>
+                    <ul class="dropdown-menu">
+                        <li onclick="showContent('sti-software')">软件方向</li>
+                        <li onclick="showContent('sti-hardware')">硬件方向</li>
+                        <li onclick="showContent('sti-physics')">物理方向</li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="showContent('hrp')">HRP小组</a></li>
+            </ul>
+        </div>
 
         <!-- 主要内容 -->
         <main class="section content-area">
-            <section id="software" class="active">
-                <h2 class="title is-3">软件方向考核</h2>
-                <p>软件方向主要考核基础算法，包括双指针、排序算法等。考核时限为2小时，考试不限编程语言。</p>
+            <section id="sti-overview" class="active">
+                <h2 class="title is-3">STI小组介绍</h2>
+                <p>STI的原含义是Science Technology Intelligence，是18级第一届STI学长学姐们创造出的含义，但是每个STI小组的成员心中可以自由理解。STI小组代表电协的精英力量，是电协在专业技能上的门面。STI小组应当有时刻增进自己，彼此扶持成长的意识；应当有克服难题，坚持不懈的能力；应当有共同进退，积极进取的精神。</p>
+                <p>STI小组拥有在电协109与112留座的权益，同时优先享有协会的各种培养资源以及更多的机会，同时STI小组的成员也需要在学习竞赛与科研知识上受到规管，需严格执行培训计划与留座制度。</p>
             </section>
-
-            <section id="hardware">
-                <h2 class="title is-3">硬件方向考核</h2>
-                <p>硬件方向的考核涉及电路设计与实物焊接，需依据给定的芯片手册和器材，设计符合要求的电路，并进行实物焊接操作。</p>
+            <section id="sti-software">
+                <h2 class="title is-3">STI小组 - 软件方向</h2>
+                <p>对于物电院的要求是首先学完51单片机，学完51单片机后可以根据自己的学习情况再细分方向，愿意继续学单片机的可以学习STM32单片机，认为不适合学单片机的可以学习其他方向：比如深度学习首先学习Python，学习完Python基础，再学习机器学习的内容，熟练使用各种模型。学习单片机是一种很好的入门电子信息专业的方法，建议电子信息专业的STI都首选单片机。</p>
+                <p><strong>考核内容：</strong>基础算法题目，共四道题目，不限语言，时长两个小时，内容包括基础算法比如双指针、排序算法等。</p>
             </section>
-
-            <section id="physics">
-                <h2 class="title is-3">物理方向考核</h2>
-                <p>物理方向考核内容包括物理建模、实验设计、数据处理及报告撰写，涉及物理学的理论、实验与计算。</p>
+            <section id="sti-hardware">
+                <h2 class="title is-3">STI小组 - 硬件方向</h2>
+                <p>硬件方向学习内容相对琐碎且复杂，涉及到非常庞大的知识量，基础理论知识难理解难消化，但循序渐进，终能有所成果。</p>
+                <p><strong>理论部分：</strong>电路分析、模拟电子技术基础、数字电子技术基础。</p>
+                <p><strong>实践部分：</strong>学会使用Multisim软件进行电路仿真，掌握仪器仪表的使用，熟练焊接技巧等。</p>
+                <p><strong>考核内容：</strong>根据给定芯片手册和器材，进行电路设计和实物焊接，使电路达到指定要求。</p>
             </section>
-
-            <section id="hrp-section">
-                <h2 class="title is-3">HRP考核内容</h2>
-                <p>HRP考核内容暂时待定，将在后续通知中进行详细说明。</p>
+            <section id="sti-physics">
+                <h2 class="title is-3">STI小组 - 物理方向</h2>
+                <p>STI物理方向主要针对CUPT全国大学生物理学术竞赛进行培训，涵盖理论推导、仿真验证、编程计算、实验设计、数据处理等类科研的所有流程。</p>
+                <p><strong>考核内容：</strong>1）普物知识摸底 2）数学能力摸底 3）论文搜索与实验设计能力 4）编程能力。</p>
+            </section>
+            <section id="hrp">
+                <h2 class="title is-3">HRP小组</h2>
+                <p>HRP小组的介绍内容待定，后续将会补充完善。</p>
             </section>
         </main>
 
@@ -192,44 +189,4 @@
                 <p>官方QQ: 3300200063</p>
             </div>
         </footer>
-    </div>
-
-    <!-- 引入 JS -->
-    <script>
-        // 处理菜单展开/收起
-        document.addEventListener('DOMContentLoaded', () => {
-            const burger = document.querySelector('.navbar-burger');
-            const menu = document.getElementById('navbarMenu');
-
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-            });
-
-            const headerLogin = document.getElementById('header-login');
-            const username = localStorage.getItem('loggedInUser');
-
-            if (username) {
-                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
-                headerLogin.classList.remove('is-primary');
-                headerLogin.classList.add('is-link');
-            } else {
-                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
-            }
-        });
-
-        function logout() {
-            localStorage.removeItem('loggedInUser');
-            location.reload();
-        }
-
-        // 切换内容显示
-        function showContent(sectionId) {
-            document.querySelectorAll('.content-area section').forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
-</body>
-</html>
+   
