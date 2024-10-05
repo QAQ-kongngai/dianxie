@@ -4,54 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>烟台大学电子信息协会 - 软件部</title>
-    <!-- 引入 Bulma CSS 框架 -->
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
+    <link rel="icon" href="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" type="image/png">
+
     <style>
-        /* 自定义样式 */
         header, footer {
-            background-color: #87CEEB; /* 天蓝色 */
+            background-color: #87CEEB;
         }
         .navbar-item {
-            background-color: rgb(102, 102, 102); /* 导引项黑色 */
-            color: white; /* 默认字体颜色白色 */
+            background-color: rgb(102, 102, 102);
+            color: white;
             transition: background-color 0.3s, color 0.3s;
         }
         .navbar-item:hover {
-            background-color: white; /* 触碰时背景变白 */
-            color: black; /* 触碰时字体变黑 */
+            background-color: white;
+            color: black;
         }
         .dropdown {
-            display: none; /* 默认隐藏下拉菜单 */
-            position: absolute; /* 绝对定位 */
-            background-color: black; /* 下拉菜单背景色 */
-            z-index: 1000; /* 确保下拉菜单在其他元素之上 */
+            display: none;
+            position: absolute;
+            background-color: black;
+            z-index: 1000;
         }
         .navbar-item.has-dropdown:hover .dropdown {
-            display: block; /* 悬停时显示下拉菜单 */
+            display: block;
         }
         .navbar-item.has-dropdown:hover .dropdown .navbar-item {
-            color: white; /* 下拉菜单项字体颜色 */
+            color: white;
         }
         .navbar-item.has-dropdown:hover .dropdown .navbar-item:hover {
-            background-color: white; /* 下拉菜单项悬停时背景色 */
-            color: black; /* 悬停时字体颜色 */
+            background-color: white;
+            color: black;
+        }
+        .login-button {
+            float: right;
+        }
+        .logout-button {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        /* 英文版样式 */
+        .subtitle-english {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.8em;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- 页眉部分 -->
         <header class="section has-text-centered">
-            <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 50px; vertical-align: middle;">
-            <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会 - 软件部</h1>
-            <p class="subtitle">《软件部标语。。。》</p>
+            <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 80px; vertical-align: middle;">
+            <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会软件部</h1>
+            <h2 class="subtitle-english style="display: inline;">Welcome to the software Department of Yantai University Electronics and Information Association</h2>
+            <span id="header-login" class="button is-primary is-small login-button"></span>
         </header>
 
-        <!-- 导航栏 -->
         <nav class="navbar is-light">
             <div class="navbar-brand">
-                <a class="navbar-item" href="dx1.html">电子信息协会</a>
+                <a class="navbar-item" href="#">电子信息协会</a>
                 <button class="navbar-burger burger" aria-label="菜单" aria-expanded="false" data-target="navbarMenu">
                     <span aria-hidden="true"></span>
                     <span aria-hidden="true"></span>
@@ -68,6 +79,8 @@
                             <a class="navbar-item" href="软件部.html">软件部</a>
                             <a class="navbar-item" href="物理部.html">物理部</a>
                             <a class="navbar-item" href="传媒部.html">传媒部</a>
+                            <a class="navbar-item" href="传媒部.html">STI小组</a>
+                            <a class="navbar-item" href="传媒部.html">HRP小组</a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
@@ -75,37 +88,37 @@
                         <div class="dropdown">
                             <a class="navbar-item" href="#">专业课资源</a>
                             <a class="navbar-item" href="#">各部门资源</a>
+                            <a class="navbar-item" href="#">活动资料</a>
+                            <a class="navbar-item" href="#">竞赛资源</a>
                         </div>
                     </div>
                     <div class="navbar-item has-dropdown is-hoverable">
                         <a class="navbar-link" href="#">联系</a>
                         <div class="dropdown">
-                            <a class="navbar-item" href="#">子选项 1</a>
-                            <a class="navbar-item" href="#">子选项 2</a>
+                            <a class="navbar-item" href="#">合作</a>
+                            <a class="navbar-item" href="#">反馈</a>
                         </div>
                     </div>
                 </div>
             </div>
         </nav>
 
-        <!-- 主要内容 -->
+
         <main class="section">
             <h2 class="title is-2">软件部简介</h2>
-            <p class="content">软件部是烟台大学电子信息协会的核心部门之一，主要负责软件开发与技术创新。我们在C++、Python等编程语言以及前端、后端开发等领域有丰富的经验，并为协会提供技术支持。</p>
-            <button class="button is-primary">了解更多</button>
+            <p class="content">软件部主要是基于各种编程语言，通过计算机程序语言的编写实现各种功能,软件部有两个学习方向，一个是嵌入式软件方向，其中单片机可以看作为一个小型的系统，一般通过c语言编写，既可以实现流水灯，日历，简易计算器等小项目又可以实现小车，无人机等大型项目;另一个是人工智能方向，一般基于Python语言构建神经网络，无论是最近比较火的ChatGPT还是各类视觉识别工程亦或是手机上各类对话Ai都是以机器学习算法为底层逻辑。</p>
         </main>
 
-        <!-- 页脚部分 -->
         <footer class="footer has-text-centered">
             <div class="content">
-                <p>&copy; 2024/9/27更新 版权所有.</p>
+                <p>&copy; 2024/10/5更新 版权所有.</p>
+                <p>联系地址: 烟台大学化学馆北109/北112</p>
+                <p>官方QQ: 3300200063</p>
             </div>
         </footer>
     </div>
 
-    <!-- 引入 Bulma JS（可选） -->
     <script>
-        // 处理菜单展开/收起
         document.addEventListener('DOMContentLoaded', () => {
             const burger = document.querySelector('.navbar-burger');
             const menu = document.getElementById('navbarMenu');
@@ -114,8 +127,23 @@
                 burger.classList.toggle('is-active');
                 menu.classList.toggle('is-active');
             });
+
+            const headerLogin = document.getElementById('header-login');
+            const username = localStorage.getItem('loggedInUser');
+
+            if (username) {
+                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
+                headerLogin.classList.remove('is-primary');
+                headerLogin.classList.add('is-link');
+            } else {
+                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
+            }
         });
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            location.reload();
+        }
     </script>
 </body>
 </html>
-
