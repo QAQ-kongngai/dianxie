@@ -238,4 +238,18 @@
             }
         });
 
-        function
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            location.reload();
+        }
+
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-area section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
