@@ -76,7 +76,7 @@
         /* 新增内容部分样式 */
         .content-box {
             background-color: #87CEEB;
-            padding: 20px;
+            padding: 30px;
             margin-top: 20px;
             position: relative;
             display: flex;
@@ -85,9 +85,12 @@
         }
         .content-text {
             width: 60%;
+            line-height: 1.8;
+            font-size: 1.1em;
         }
         .content-video {
             width: 35%;
+            margin-left: 20px;
         }
         .content-video video {
             width: 100%;
@@ -155,9 +158,9 @@
             <!-- 内容展示区域 -->
             <div class="content-box">
                 <div class="content-text">
-                    <h3 class="title is-4">协会简介</h3>
+                    <h3 class="title is-3">协会简介</h3>
                     <p>烟台大学电子信息协会是一个富于创新与实干精神的学生组织，旨在通过开展科技培训、科技实践活动，培养烟大学子的科技素养并为其提供良好的科研学习环境。烟台大学电子信息协会原为光电学院科技协会成立于2008年，下设“软件部、硬件部、传媒部、物理部”四个部门。协会设备齐全、拥有丰富的知识资源，能为协会成员提供多元化实践培训以及学习氛围浓厚的环境。烟台大学电子信息协会致力于科技创新、善于钻研，在为同学们提供技术支持的同时也为我院EDA实验室以及FPGA实验室提供大量人才。在电子设计大赛、挑战杯、ICAN等多个国家级比赛中取得优异成绩。协会旨在让每位成员都有所知、有所得、有所成长，丰富在校大学生的生活。</p>
-                    <a href="电协留座条例2024版.docx" target="_blank">查看《电协留座条例2024版》</a>
+                    <a href="电协理事会职务分配及要求2024版.docx" target="_blank">查看《电协理事会职务分配及要求2024版》</a>
                 </div>
                 <div class="content-video">
                     <video controls>
@@ -216,4 +219,23 @@
         // 处理菜单展开/收起
         document.addEventListener('DOMContentLoaded', () => {
             const burger = document.querySelector('.navbar-burger');
-            const menu = document.getElementBy
+            const menu = document.getElementById('navbarMenu');
+
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            const headerLogin = document.getElementById('header-login');
+            const username = localStorage.getItem('loggedInUser');
+
+            if (username) {
+                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
+                headerLogin.classList.remove('is-primary');
+                headerLogin.classList.add('is-link');
+            } else {
+                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
+            }
+        });
+
+        function
