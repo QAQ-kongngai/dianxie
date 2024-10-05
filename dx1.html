@@ -92,9 +92,9 @@
             width: 35%;
             margin-left: 20px;
         }
-        .content-video video {
+        .content-video iframe {
             width: 100%;
-            height: auto;
+            height: 300px;
         }
     </style>
 </head>
@@ -163,10 +163,7 @@
                     <a href="电协理事会职务分配及要求2024版.docx" target="_blank">查看《电协理事会职务分配及要求2024版》</a>
                 </div>
                 <div class="content-video">
-                    <video controls>
-                        <source src="your-video.mp4" type="video/mp4">
-                        您的浏览器不支持视频播放。
-                    </video>
+                    <iframe src="//player.bilibili.com/player.html?isOutside=true&aid=113254328307851&bvid=BV1oq1RYKEYP&cid=26153191893&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
                 </div>
             </div>
             
@@ -205,51 +202,3 @@
         </main>
 
         <!-- 页脚部分 -->
-        <footer class="footer has-text-centered">
-            <div class="content">
-                <p>&copy; 2024/10/5更新 版权所有.</p>
-                <p>联系地址: 烟台大学化学馆北109/北112</p>
-                <p>官方QQ: 3300200063</p>
-            </div>
-        </footer>
-    </div>
-
-    <!-- 引入 JS -->
-    <script>
-        // 处理菜单展开/收起
-        document.addEventListener('DOMContentLoaded', () => {
-            const burger = document.querySelector('.navbar-burger');
-            const menu = document.getElementById('navbarMenu');
-
-            burger.addEventListener('click', () => {
-                burger.classList.toggle('is-active');
-                menu.classList.toggle('is-active');
-            });
-
-            const headerLogin = document.getElementById('header-login');
-            const username = localStorage.getItem('loggedInUser');
-
-            if (username) {
-                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
-                headerLogin.classList.remove('is-primary');
-                headerLogin.classList.add('is-link');
-            } else {
-                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
-            }
-        });
-
-        function logout() {
-            localStorage.removeItem('loggedInUser');
-            location.reload();
-        }
-
-        function showContent(sectionId) {
-            const sections = document.querySelectorAll('.content-area section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
-            document.getElementById(sectionId).classList.add('active');
-        }
-    </script>
-</body>
-</html>
