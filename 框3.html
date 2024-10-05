@@ -140,8 +140,10 @@
         <!-- 垂直导引栏 -->
         <div class="sidebar">
             <ul>
-                <li><a href="#" onclick="showContent('sti-overview')">STI小组介绍</a>
+                <li class="navbar-item has-dropdown is-hoverable">
+                    <a class="dropdown-toggle" href="#">STI小组介绍</a>
                     <ul class="dropdown-menu">
+                        <li onclick="showContent('sti-overview')">STI总体介绍</li>
                         <li onclick="showContent('sti-software')">软件方向</li>
                         <li onclick="showContent('sti-hardware')">硬件方向</li>
                         <li onclick="showContent('sti-physics')">物理方向</li>
@@ -168,25 +170,4 @@
                 <p>硬件方向学习内容相对琐碎且复杂，涉及到非常庞大的知识量，基础理论知识难理解难消化，但循序渐进，终能有所成果。</p>
                 <p><strong>理论部分：</strong>电路分析、模拟电子技术基础、数字电子技术基础。</p>
                 <p><strong>实践部分：</strong>学会使用Multisim软件进行电路仿真，掌握仪器仪表的使用，熟练焊接技巧等。</p>
-                <p><strong>考核内容：</strong>根据给定芯片手册和器材，进行电路设计和实物焊接，使电路达到指定要求。</p>
-            </section>
-            <section id="sti-physics">
-                <h2 class="title is-3">STI小组 - 物理方向</h2>
-                <p>STI物理方向主要针对CUPT全国大学生物理学术竞赛进行培训，涵盖理论推导、仿真验证、编程计算、实验设计、数据处理等类科研的所有流程。</p>
-                <p><strong>考核内容：</strong>1）普物知识摸底 2）数学能力摸底 3）论文搜索与实验设计能力 4）编程能力。</p>
-            </section>
-            <section id="hrp">
-                <h2 class="title is-3">HRP小组</h2>
-                <p>HRP小组的介绍内容待定，后续将会补充完善。</p>
-            </section>
-        </main>
-
-        <!-- 页脚部分 -->
-        <footer class="footer has-text-centered">
-            <div class="content">
-                <p>&copy; 2024/10/5更新 版权所有.</p>
-                <p>联系地址: 烟台大学化学馆北109/北112</p>
-                <p>官方QQ: 3300200063</p>
-            </div>
-        </footer>
-   
+                <p><strong>考核内容：</
