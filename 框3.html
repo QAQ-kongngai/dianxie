@@ -59,24 +59,33 @@
             background-color: rgb(102, 102, 102);
             color: white;
             transition: background-color 0.3s, color 0.3s;
+            cursor: pointer;
+            position: relative;
         }
         .sidebar .navbar-item:hover {
             background-color: white;
             color: black;
         }
-        .dropdown-menu {
-            display: none;
-            list-style-type: none;
-            padding-left: 0;
-            margin-top: 10px;
-        }
-        .dropdown-toggle:hover + .dropdown-menu,
-        .dropdown-toggle:focus + .dropdown-menu {
+        .sidebar .navbar-item.has-dropdown:hover .dropdown-menu {
             display: block;
         }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            left: 100%;
+            top: 0;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 0;
+            background-color: rgb(102, 102, 102);
+            border-radius: 4px;
+            z-index: 1000;
+            width: 180px;
+        }
         .dropdown-menu li {
-            padding: 5px 0;
-            cursor: pointer;
+            padding: 10px;
+            color: white;
+            transition: background-color 0.3s;
         }
         .dropdown-menu li:hover {
             background-color: #87CEEB;
@@ -149,18 +158,16 @@
 
         <!-- 垂直导引栏 -->
         <div class="sidebar">
-            <ul>
-                <li class="navbar-item has-dropdown is-hoverable">
-                    <a class="dropdown-toggle" href="#">STI小组介绍</a>
-                    <ul class="dropdown-menu">
-                        <li onclick="showContent('sti-overview')">STI总体介绍</li>
-                        <li onclick="showContent('sti-software')">软件方向</li>
-                        <li onclick="showContent('sti-hardware')">硬件方向</li>
-                        <li onclick="showContent('sti-physics')">物理方向</li>
-                    </ul>
-                </li>
-                <li class="navbar-item"><a href="#" onclick="showContent('hrp')">HRP小组</a></li>
-            </ul>
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="dropdown-toggle">STI小组介绍</a>
+                <ul class="dropdown-menu">
+                    <li onclick="showContent('sti-overview')">STI总体介绍</li>
+                    <li onclick="showContent('sti-software')">软件方向</li>
+                    <li onclick="showContent('sti-hardware')">硬件方向</li>
+                    <li onclick="showContent('sti-physics')">物理方向</li>
+                </ul>
+            </div>
+            <div class="navbar-item"><a href="#" onclick="showContent('hrp')">HRP小组</a></div>
         </div>
 
         <!-- 主要内容 -->
