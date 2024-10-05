@@ -3,42 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>烟台大学电子信息协会</title>
-    <!-- 引入 Bulma CSS 框架 -->
+    <title>烟台大学电子信息协会 - 硬件部</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
-
-    <!-- 添加标签页图标 -->
     <link rel="icon" href="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" type="image/png">
 
     <style>
-        /* 自定义样式 */
         header, footer {
-            background-color: #87CEEB; /* 天蓝色 */
+            background-color: #87CEEB;
         }
         .navbar-item {
-            background-color: rgb(102, 102, 102); /* 导引项黑色 */
-            color: white; /* 默认字体颜色白色 */
+            background-color: rgb(102, 102, 102);
+            color: white;
             transition: background-color 0.3s, color 0.3s;
         }
         .navbar-item:hover {
-            background-color: white; /* 触碰时背景变白 */
-            color: black; /* 触碰时字体变黑 */
+            background-color: white;
+            color: black;
         }
         .dropdown {
-            display: none; /* 默认隐藏下拉菜单 */
-            position: absolute; /* 绝对定位 */
-            background-color: black; /* 下拉菜单背景色 */
-            z-index: 1000; /* 确保下拉菜单在其他元素之上 */
+            display: none;
+            position: absolute;
+            background-color: black;
+            z-index: 1000;
         }
         .navbar-item.has-dropdown:hover .dropdown {
-            display: block; /* 悬停时显示下拉菜单 */
+            display: block;
         }
         .navbar-item.has-dropdown:hover .dropdown .navbar-item {
-            color: white; /* 下拉菜单项字体颜色 */
+            color: white;
         }
         .navbar-item.has-dropdown:hover .dropdown .navbar-item:hover {
-            background-color: white; /* 下拉菜单项悬停时背景色 */
-            color: black; /* 悬停时字体颜色 */
+            background-color: white;
+            color: black;
         }
         .login-button {
             float: right;
@@ -46,6 +42,11 @@
         .logout-button {
             margin-left: 10px;
             cursor: pointer;
+        }
+        /* 英文版样式 */
+        .subtitle-english {
+            font-family: 'Times New Roman', serif;
+            font-size: 0.8em;
         }
     </style>
 </head>
@@ -56,7 +57,7 @@
         <header class="section has-text-centered">
             <img src="https://github.com/QAQ-kongngai/dianxie/raw/main/协会标.png" alt="协会标志" style="width: 80px; vertical-align: middle;">
             <h1 class="title" style="display: inline;">欢迎来到烟台大学电子信息协会官网</h1>
-            <h1 class="title" style="display: inline;">Welcome to Yantai University Electronics and Information Association</h1>
+            <h2 class="subtitle-english style="display: inline;">Welcome to Yantai University Electronics and Information Association</h2>
             <span id="header-login" class="button is-primary is-small login-button"></span>
         </header>
 
