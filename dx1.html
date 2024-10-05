@@ -202,3 +202,52 @@
         </main>
 
         <!-- 页脚部分 -->
+ <!-- 页脚部分 -->
+        <footer class="footer has-text-centered">
+            <div class="content">
+                <p>&copy; 2024/10/5更新 版权所有.</p>
+                <p>联系地址: 烟台大学化学馆北109/北112</p>
+                <p>官方QQ: 3300200063</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- 引入 JS -->
+    <script>
+        // 处理菜单展开/收起
+        document.addEventListener('DOMContentLoaded', () => {
+            const burger = document.querySelector('.navbar-burger');
+            const menu = document.getElementById('navbarMenu');
+
+            burger.addEventListener('click', () => {
+                burger.classList.toggle('is-active');
+                menu.classList.toggle('is-active');
+            });
+
+            const headerLogin = document.getElementById('header-login');
+            const username = localStorage.getItem('loggedInUser');
+
+            if (username) {
+                headerLogin.innerHTML = `欢迎, ${username} <span class="button is-small is-danger logout-button" onclick="logout()">退出</span>`;
+                headerLogin.classList.remove('is-primary');
+                headerLogin.classList.add('is-link');
+            } else {
+                headerLogin.innerHTML = '<a href="dr.html" class="button is-primary is-small">登录</a>';
+            }
+        });
+
+        function logout() {
+            localStorage.removeItem('loggedInUser');
+            location.reload();
+        }
+
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-area section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
