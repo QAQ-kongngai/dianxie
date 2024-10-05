@@ -55,8 +55,14 @@
             background-color: #f5f5f5;
             border-radius: 8px;
         }
-        .content-area {
-            margin-left: 220px;
+        .sidebar .navbar-item {
+            background-color: rgb(102, 102, 102);
+            color: white;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .sidebar .navbar-item:hover {
+            background-color: white;
+            color: black;
         }
         .dropdown-menu {
             display: none;
@@ -74,6 +80,9 @@
         }
         .dropdown-menu li:hover {
             background-color: #87CEEB;
+        }
+        .content-area {
+            margin-left: 220px;
         }
         .content-area section {
             display: none;
@@ -150,7 +159,7 @@
                         <li onclick="showContent('sti-physics')">物理方向</li>
                     </ul>
                 </li>
-                <li><a href="#" onclick="showContent('hrp')">HRP小组</a></li>
+                <li class="navbar-item"><a href="#" onclick="showContent('hrp')">HRP小组</a></li>
             </ul>
         </div>
 
@@ -171,13 +180,13 @@
                 <p>硬件方向学习内容相对琐碎且复杂，涉及到非常庞大的知识量，基础理论知识难理解难消化，但循序渐进，终能有所成果。</p>
                 <p><strong>理论部分：</strong>电路分析、模拟电子技术基础、数字电子技术基础。</p>
                 <p><strong>实践部分：</strong>学会使用Multisim软件进行电路仿真，掌握仪器仪表的使用，熟练焊接技巧等。</p>
-                <p><strong>考核内容：</strong>主要考核学生的实际动手能力与理论知识的结合，内容涉及电路分析与仿真实验。</p>
+                <p><strong>考核内容：</strong>主要考核实际动手能力与理论知识的结合，内容涉及电路分析与仿真实验。</p>
             </section>
             <section id="sti-physics">
                 <h2 class="title is-3">STI小组 - 物理方向</h2>
-                <p>物理方向注重于提升学生的基础物理素养以及培养对物理学科的深入理解与探索精神。</p>
+                <p>物理方向注重于提升基础物理素养以及培养对物理学科的深入理解与探索精神。</p>
                 <p><strong>学习内容：</strong>力学、电磁学、热学、光学以及量子物理的基础知识，进一步学习科研实验的设计与数据分析。</p>
-                <p><strong>考核内容：</strong>主要考核学生的物理基本功及实验设计能力，内容包括基础物理实验及数据分析。</p>
+                <p><strong>考核内容：</strong>主要考核物理基本功及实验设计能力，内容包括基础物理实验及数据分析。</p>
             </section>
             <section id="hrp">
                 <h2 class="title is-3">HRP小组</h2>
@@ -222,6 +231,14 @@
         function logout() {
             localStorage.removeItem('loggedInUser');
             location.reload();
+        }
+
+        function showContent(sectionId) {
+            const sections = document.querySelectorAll('.content-area section');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
         }
     </script>
 </body>
